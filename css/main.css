@@ -1,0 +1,97 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+
+* {
+	font-family: Arial, sans-serif;
+}
+
+body {
+	padding: 1em;
+}
+
+.done-true {
+	text-decoration: line-through;
+	color: gray;
+}
+
+.input {
+	width: 20em;
+	height: 1.5em;
+	background: pink;
+	font-size: 1.5em;
+ }
+
+.strike {
+   text-decoration: line-through;
+ }
+
+.inputbox {
+	margin-right: 1em;
+	background: red;
+}
+
+.deletethingy {
+	color: red;
+}
+ @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+ 	h3 {
+ 		font-size: 5em;
+ 	}
+
+ 	p {
+ 		font-size: 3em;
+ 	}
+
+ 	li {
+ 		font-size: 3em;
+ 	}
+
+ 	input.checkbox  {
+			width : 3em;
+			height :3em;
+			margin-left: 1em;
+			background: orange;
+	}
+ 	.input {
+	 	height: 3em;
+	 	font-size: 3em;
+	 	background: aqua;
+	 	width: 20em;
+	 }
+
+	 #addbtn {
+	 	height: 3em;
+	 	width: 10em;
+	 	font-size: 3em;
+	 	margin-top: 1em;
+	 }
+	#refreshbtn {
+	 	height: 3em;
+	 	width: 10em;
+	 	font-size: 3em;
+	 	margin-top: 1em;
+	 }
+}/*end mobile media query */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	body {
+		font-size: 2em;
+	}
+	.input {
+	 	height: 1.5em;
+	 	font-size:1em;
+	 	background: yellow;
+	 	width: 20em;
+	 }
+
+	 #addbtn {
+	 	width: 10em;
+	 	font-size: 1em;
+	 	margin-top: 1em;
+	 }
+
+	 #refreshbtn {
+	 	width: 10em;
+	 	font-size: 1em;
+	 	margin-top: 1em;
+	 }
+}/*end tablet media query */
