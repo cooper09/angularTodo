@@ -17,7 +17,7 @@ function Ctrl($scope) {
 
 
 function DataCtrl($scope, $http) {
-   $scope.newTask = 'New Task';
+   $scope.newTask = '';
 
    $scope.code = null;
    $scope.response = null;
@@ -70,7 +70,7 @@ function DataCtrl($scope, $http) {
         $http.jsonp('http://sonyainc.net/todo/php/get_sql_data.php?format=jsonp&callback=JSON_CALLBACK').success(function(data, status) {
         $scope.data = data;
         $scope.status = status;
-
+         $scope.newTask = '';
         $scope.total = data.length;
     }).
       error(function(data, status) {
