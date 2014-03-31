@@ -45,10 +45,10 @@ function DataCtrl($scope, $http) {
           $http.jsonp("http://sonyainc.net/todo/php/put_item.php?task="+taskname+"&format=jsonp&callback=JSON_CALLBACK").success(function(data, status) {
             $scope.data = data;
             $scope.status = status;
-
+            $scope.watch();
         }).
           error(function(data, status) {
-            $scope.data = data || " Delete Request failed";
+            $scope.data = data || "Put Request failed";
             $scope.status = status;
         });
       }
@@ -57,7 +57,8 @@ function DataCtrl($scope, $http) {
       $scope.deleteData = function(taskId) {
          $http.jsonp('http://sonyainc.net/todo/php/delete_item.php?taskid='+taskId +'&format=jsonp&callback=JSON_CALLBACK').success(function(data, status) {
             $scope.data = data;
-            $scope.status = status; 
+            $scope.status = status;
+            $scope.watch(); 
         }).
           error(function(data, status) {
             $scope.data = data || " Delete Request failed";

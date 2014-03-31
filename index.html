@@ -5,9 +5,14 @@
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="shortcut icon" sizes="196x196" href="images/app-icon.jpg">
     <script src="http://code.angularjs.org/1.2.11/angular.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    
+    <!-- sidebar section -->
+    <link rel="stylesheet" type="text/css" href="css/dark-glass/sidebar.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="src/jquery.sidebar.js"></script>
+
   </head>
   <body>
     <h3>PolyAngular - Todo</h3>
@@ -28,6 +33,30 @@
       <br>
        <button id="refreshbtn" ng-click="refresh()" ng-init="count=0">Refresh</button>
    </div><!-- end DataCtrl -->
-   
+   <style>
+    .large {
+      font-size: 24px;
+    }
+   </style>
+    <ul id="demo_menu" >
+      <li><a href="#" class="large">Business</a></li>
+      <li><a href="#" class="large">Personal</a></li>
+      <li><a href="#" class="large">Groceries</a></li>
+    </ul>
+    <script type="text/javascript">
+        $("ul#demo_menu").sidebar({
+            position:"right",
+            callback:{
+                item : {
+                    enter : function(){
+                        $(this).find("a").animate({color:"red"}, 250);
+                    },
+                    leave : function(){
+                        $(this).find("a").animate({color:"white"}, 250);
+                    }
+                }
+            }
+        });
+        </script>
   </body>
 </html>
