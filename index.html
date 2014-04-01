@@ -34,14 +34,14 @@
        <button id="refreshbtn" ng-click="refresh()" ng-init="count=0">Refresh</button>
    </div><!-- end DataCtrl -->
    <style>
-    .large {
+    .cat {
       font-size: 24px;
     }
    </style>
     <ul id="demo_menu" >
-      <li><a href="#" class="large">Business</a></li>
-      <li><a href="#" class="large">Personal</a></li>
-      <li><a href="#" class="large">Groceries</a></li>
+      <li><a href="#" class="cat">Business</a></li>
+      <li><a href="#" class="cat">Personal</a></li>
+      <li><a href="#" class="cat">Groceries</a></li>
     </ul>
     <script type="text/javascript">
         $("ul#demo_menu").sidebar({
@@ -56,6 +56,11 @@
                     }
                 }
             }
+        });
+
+
+        $(".cat").click( function () {
+          alert("clicked a category...");
         });
         </script>
   </body>
